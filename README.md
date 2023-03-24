@@ -12,10 +12,10 @@ Be sure that you have installed
 
 # Basic Compilation  
 
-1) Clone the git repo with \<ssh link\>:  
+1) Clone the git repo:  
 `git clone https://github.com/ZhangHaibo0810/QBreakpad.git QBreakpad`
 
-2) Change directory into new cloned MVCHalbert:  
+2) Change directory into new cloned QBreakpad:  
 `cd QBreakpad`  
 
 3) Update sub modules:  
