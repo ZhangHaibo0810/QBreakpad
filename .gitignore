@@ -1,0 +1,16 @@
+*.VC.db
+*.user
+*.pyc
+Output
+/obj
+/bin
+*.sdf
+*.suo
+*.db
+*.vs
+*.vscode
+*.opensdf
+*.opendb
+v16
+_ReSharper.Caches/
+/x64

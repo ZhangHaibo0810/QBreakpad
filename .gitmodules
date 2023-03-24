@@ -1,0 +1,3 @@
+[submodule "Modules/Breakpad"]
+	path = Modules/Breakpad
+	url = https://github.com/google/breakpad.git
