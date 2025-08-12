@@ -11,6 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\common\auto_critical_section.h" />
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\common\ipc_protocol.h" />
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\crash_generation\client_info.h" />
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\crash_generation\crash_generation_client.h" />
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\crash_generation\crash_generation_server.h" />
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\crash_generation\minidump_generator.h" />
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\handler\exception_handler.h" />
+    <ClInclude Include="..\Modules\Breakpad\src\common\windows\guid_string.h" />
+    <ClInclude Include="..\Modules\Breakpad\src\common\windows\string_utils-inl.h" />
     <ClInclude Include="QBreakpadDllExport.h" />
     <ClInclude Include="QCallOnce.h" />
     <ClInclude Include="QSingleton.h" />
@@ -18,36 +27,44 @@
     <QtMoc Include="QBreakpadHandler.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\crash_generation\client_info.cc" />
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\crash_generation\crash_generation_client.cc" />
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\crash_generation\crash_generation_server.cc" />
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\crash_generation\minidump_generator.cc" />
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\handler\exception_handler.cc" />
+    <ClCompile Include="..\Modules\Breakpad\src\common\windows\guid_string.cc" />
+    <ClCompile Include="..\Modules\Breakpad\src\common\windows\string_utils.cc" />
     <ClCompile Include="QBreakpadHandler.cpp" />
     <ClCompile Include="QBreakpadHttpUploader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{08926FF5-CA59-4BF1-A59E-C32AF1C14A46}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
-    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
-    <QtInstall>msvc2019_64</QtInstall>
-    <QtModules>quick</QtModules>
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;network</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
-    <QtInstall>msvc2019_64</QtInstall>
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
     <QtModules>core;network</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
@@ -77,6 +94,14 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)Modules\breakpad\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>QBREAKPAD_LIB;BUILD_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Modules\breakpad\src;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PreprocessorDefinitions>QBREAKPAD_LIB;BUILD_STATIC;</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">

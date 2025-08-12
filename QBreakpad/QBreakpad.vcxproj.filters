@@ -21,6 +21,18 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="Breakpad">
+      <UniqueIdentifier>{cfe725a5-445f-409e-9b1e-5826c4a97b1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Breakpad\common">
+      <UniqueIdentifier>{34e30aa0-dcaa-4cf2-8dac-110d0dd1d297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Breakpad\crash_generation">
+      <UniqueIdentifier>{7866bce6-7674-457a-b629-97746cde7a60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Breakpad\handler">
+      <UniqueIdentifier>{d6268e45-75ca-4c85-9a07-a11c802cfc3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QBreakpadDllExport.h">
@@ -31,6 +43,33 @@
     </ClInclude>
     <ClInclude Include="QSingleton.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\handler\exception_handler.h">
+      <Filter>Breakpad\handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\crash_generation\client_info.h">
+      <Filter>Breakpad\crash_generation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\crash_generation\crash_generation_client.h">
+      <Filter>Breakpad\crash_generation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\crash_generation\crash_generation_server.h">
+      <Filter>Breakpad\crash_generation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\crash_generation\minidump_generator.h">
+      <Filter>Breakpad\crash_generation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\common\auto_critical_section.h">
+      <Filter>Breakpad\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Modules\Breakpad\src\client\windows\common\ipc_protocol.h">
+      <Filter>Breakpad\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Modules\Breakpad\src\common\windows\guid_string.h">
+      <Filter>Breakpad\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Modules\Breakpad\src\common\windows\string_utils-inl.h">
+      <Filter>Breakpad\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +86,27 @@
     </ClCompile>
     <ClCompile Include="QBreakpadHttpUploader.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\handler\exception_handler.cc">
+      <Filter>Breakpad\handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\crash_generation\client_info.cc">
+      <Filter>Breakpad\crash_generation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\crash_generation\crash_generation_client.cc">
+      <Filter>Breakpad\crash_generation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\crash_generation\crash_generation_server.cc">
+      <Filter>Breakpad\crash_generation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Modules\Breakpad\src\client\windows\crash_generation\minidump_generator.cc">
+      <Filter>Breakpad\crash_generation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Modules\Breakpad\src\common\windows\guid_string.cc">
+      <Filter>Breakpad\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Modules\Breakpad\src\common\windows\string_utils.cc">
+      <Filter>Breakpad\common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
